@@ -1,0 +1,42 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+  body.dark {
+    background-color: #2d3748; /* Dark background */
+    color: white; /* Dark text */
+  }
+  /* Tailwind classes are applied here */
+body {
+    width: 100%;
+    overflow-x: hidden; /* To prevent horizontal overflow */
+  }
+  body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex-grow: 1; /* Takes all available space */
+}
+
+/* Light theme (default) */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Dark theme */
+body.dark {
+  background-color: #e09393;
+  color: white;
+}
+
+
+
