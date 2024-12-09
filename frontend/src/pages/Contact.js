@@ -35,7 +35,7 @@ const Contact = () => {
   });
 
   return (
-    <div className="p-5 max-w-xl mx-auto">
+    <div className="p-7 max-w-xl mx-auto">
       <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
       <form onSubmit={formik.handleSubmit} className="space-y-4">
         {/* Name Field */}
