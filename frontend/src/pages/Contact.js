@@ -35,12 +35,15 @@ const Contact = () => {
   });
 
   return (
-    <div className="p-7 max-w-xl mx-auto">
-      <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
-      <form onSubmit={formik.handleSubmit} className="space-y-4">
+    <div className="p-6 sm:p-8 md:p-12 mb-10 lg:p-16 xl:p-20 max-w-[90%] sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full mx-auto mt-10 bg-white rounded-lg shadow-lg dark:bg-gray-800 dark:text-white">
+
+      <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-white mb-8">
+        Contact Us
+      </h2>
+      <form onSubmit={formik.handleSubmit} className="space-y-6">
         {/* Name Field */}
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+        <div className="flex flex-col">
+          <label htmlFor="name" className="text-sm font-medium text-gray-700 dark:text-white">
             Name
           </label>
           <input
@@ -50,16 +53,16 @@ const Contact = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.name}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:text-white"
           />
           {formik.touched.name && formik.errors.name && (
-            <div className="text-red-500 text-sm">{formik.errors.name}</div>
+            <div className="text-red-500 text-sm mt-1">{formik.errors.name}</div>
           )}
         </div>
 
         {/* Email Field */}
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+        <div className="flex flex-col">
+          <label htmlFor="email" className="text-sm font-medium text-gray-700 dark:text-white">
             Email
           </label>
           <input
@@ -69,16 +72,16 @@ const Contact = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:text-white"
           />
           {formik.touched.email && formik.errors.email && (
-            <div className="text-red-500 text-sm">{formik.errors.email}</div>
+            <div className="text-red-500 text-sm mt-1">{formik.errors.email}</div>
           )}
         </div>
 
-        {/* Dropdown Field */}
-        <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
+        {/* Subject Field */}
+        <div className="flex flex-col">
+          <label htmlFor="subject" className="text-sm font-medium text-gray-700 dark:text-white">
             Subject
           </label>
           <select
@@ -87,7 +90,7 @@ const Contact = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.subject}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:text-white"
           >
             <option value="" label="Select a subject" />
             <option value="general" label="General Inquiry" />
@@ -95,17 +98,17 @@ const Contact = () => {
             <option value="feedback" label="Feedback" />
           </select>
           {formik.touched.subject && formik.errors.subject && (
-            <div className="text-red-500 text-sm">{formik.errors.subject}</div>
+            <div className="text-red-500 text-sm mt-1">{formik.errors.subject}</div>
           )}
         </div>
 
-        {/* Radio Buttons */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
+        {/* Contact Method Radio Buttons */}
+        <div className="flex flex-col">
+          <label className="text-sm font-medium text-gray-700 dark:text-white">
             Preferred Contact Method
           </label>
-          <div className="flex space-x-4">
-            <label>
+          <div className="flex space-x-6">
+            <label className="flex items-center">
               <input
                 type="radio"
                 name="contactMethod"
@@ -113,10 +116,11 @@ const Contact = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 checked={formik.values.contactMethod === "email"}
+                className="mr-2"
               />
-              <span className="ml-2">Email</span>
+              <span>Email</span>
             </label>
-            <label>
+            <label className="flex items-center">
               <input
                 type="radio"
                 name="contactMethod"
@@ -124,39 +128,38 @@ const Contact = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 checked={formik.values.contactMethod === "phone"}
+                className="mr-2"
               />
-              <span className="ml-2">Phone</span>
+              <span>Phone</span>
             </label>
           </div>
           {formik.touched.contactMethod && formik.errors.contactMethod && (
-            <div className="text-red-500 text-sm">
-              {formik.errors.contactMethod}
-            </div>
+            <div className="text-red-500 text-sm mt-1">{formik.errors.contactMethod}</div>
           )}
         </div>
 
-        {/* Checkbox */}
-        <div>
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              name="terms"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              checked={formik.values.terms}
-            />
-            <span className="ml-2">
-              I agree to the <a href="#" className="text-blue-500">terms and conditions</a>
-            </span>
-          </label>
-          {formik.touched.terms && formik.errors.terms && (
-            <div className="text-red-500 text-sm">{formik.errors.terms}</div>
-          )}
+        {/* Terms Checkbox */}
+        <div className="flex items-center">
+          <input
+            type="checkbox"
+            name="terms"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            checked={formik.values.terms}
+            className="mr-2"
+          />
+          <span>
+            I agree to the{" "}
+            <a href="#" className="text-blue-500">terms and conditions</a>
+          </span>
         </div>
+        {formik.touched.terms && formik.errors.terms && (
+          <div className="text-red-500 text-sm mt-1">{formik.errors.terms}</div>
+        )}
 
         {/* Message Field */}
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+        <div className="flex flex-col">
+          <label htmlFor="message" className="text-sm font-medium text-gray-700 dark:text-white">
             Message
           </label>
           <textarea
@@ -165,17 +168,17 @@ const Contact = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.message}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:text-white"
           ></textarea>
           {formik.touched.message && formik.errors.message && (
-            <div className="text-red-500 text-sm">{formik.errors.message}</div>
+            <div className="text-red-500 text-sm mt-1">{formik.errors.message}</div>
           )}
         </div>
 
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+          className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors"
         >
           Submit
         </button>
@@ -185,3 +188,13 @@ const Contact = () => {
 };
 
 export default Contact;
+// max-w-sm: Restricts the maximum width to 24rem (384px) on screens smaller than 600px
+
+
+
+// max-w-[90%]:
+
+// Ensures the form takes up at most 90% of the screen width for very small screens.
+// It prevents the form from becoming too wide on small devices
+// On very small screens (< 640px):
+// The form will take up 90% of the screen width with equal space on both sides.

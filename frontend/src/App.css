@@ -7,19 +7,12 @@
   padding:0;
   box-sizing: border-box;
 }
-  body.dark {
-    background-color: #2d3748; /* Dark background */
-    color: white; /* Dark text */
-  }
-  /* Tailwind classes are applied here */
 body {
     width: 100%;
     overflow-x: hidden; /* To prevent horizontal overflow */
-  }
-  body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+   display: flex;
+   flex-direction: column;
+    height: 100vh;
 }
 
 main {
@@ -34,7 +27,7 @@ body {
 
 /* Dark theme */
 body.dark {
-  background-color: #e09393;
+  background-color: #cadbb4;
   color: white;
 }
 

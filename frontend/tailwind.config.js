@@ -4,7 +4,11 @@ module.exports = {
   ],
   darkMode: 'class', // Ensure this is set to 'class'
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xs: '400px', // Custom breakpoint for screens 300px and below
+      },
+    },
   },
   plugins: [],
 };

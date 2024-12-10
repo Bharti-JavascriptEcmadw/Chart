@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Table = ({ data }) => {
-  const [sortedData, setSortedData] = useState(data);
+  const [sortedData, setSortedData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5; // Number of rows per page
 
-  // Sorting function
-  const sortData = (key) => {
-    const sorted = [...sortedData].sort((a, b) =>
-      a[key] > b[key] ? 1 : -1
-    );
+  // Sorting and pagination logic
+  useEffect(() => {
+    const sorted = [...data].sort((a, b) => {
+      // Sorting Name alphabetically
+      if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+      if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+      return 0;
+    });
     setSortedData(sorted);
-  };
+  }, [data]);
 
   // Pagination logic
   const totalPages = Math.ceil(sortedData.length / itemsPerPage);
@@ -27,23 +30,13 @@ const Table = ({ data }) => {
   };
 
   return (
-    <div className="p-4 bg-white shadow rounded-lg">
+    <div className="p-4 bg-green-800 shadow rounded-lg">
       {/* Table */}
       <table className="table-auto w-full border-collapse border border-gray-200">
         <thead className="bg-gray-100">
           <tr>
-            <th
-              className="border p-2 cursor-pointer hover:bg-gray-200"
-              onClick={() => sortData("name")}
-            >
-              Name
-            </th>
-            <th
-              className="border p-2 cursor-pointer hover:bg-gray-200"
-              onClick={() => sortData("age")}
-            >
-              Age
-            </th>
+            <th className="border p-2">Name</th>
+            <th className="border p-2">Age</th>
           </tr>
         </thead>
         <tbody>
