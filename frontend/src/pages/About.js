@@ -17,7 +17,7 @@ const About = () => {
   ];
 
   return (
-    <div className="p-6 max-w-[90%] lg:max-w-3xl mx-auto border-1 border-teal-500 bg-pink-900 mt-10 mb-10">
+    <div className="p-6 max-w-[90%]  mx-auto border-1 border-teal-500 bg-pink-900 mt-10 mb-10 w-full  ">
       <h2 className="text-2xl font-semibold mb-4">About Page</h2>
       <p className="mb-6">This is the about page of the dashboard.</p>
       <Table data={sampleData} />

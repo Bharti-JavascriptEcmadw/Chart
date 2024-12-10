@@ -34,7 +34,7 @@ const Home = () => {
           {/* Dashboard Component */}
           <Dashboard />
           </div>
-          <div>fdfd
+          <div>
           {/* Chart Component - Full Width and Dynamic Height */}
           {/* <ChartComponent data={data} /> */}
           </div>

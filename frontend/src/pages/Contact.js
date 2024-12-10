@@ -35,7 +35,7 @@ const Contact = () => {
   });
 
   return (
-    <div className="p-6 sm:p-8 md:p-12 mb-10 lg:p-16 xl:p-20 max-w-[90%] sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full mx-auto mt-10 bg-white rounded-lg shadow-lg dark:bg-gray-800 dark:text-white">
+    <div className=" bg-blue-300 p-6 sm:p-8 md:p-12 mb-10 lg:p-16 xl:p-20 max-w-[90%] sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full mx-auto mt-10 text-black rounded-lg shadow-lg dark:bg-gray-800 dark:text-white">
 
       <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-white mb-8">
         Contact Us
